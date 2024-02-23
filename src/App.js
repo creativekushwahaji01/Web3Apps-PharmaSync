@@ -3,7 +3,7 @@ import Web3 from 'web3';
 import Navigation from './components/Navigation';
 import Section from './components/Section';
 import Product from './components/Product';
-import MedicineABI from './abis/Bookwarm.json.';
+import MedicineABI from './abis/Bookwarm.json';
 import config from './config.json';
 import logo from './assets/store/main_banner.png';
 
