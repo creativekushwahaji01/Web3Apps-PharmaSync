@@ -18,17 +18,21 @@ const Product = ({ item, provider, account, dappazon, togglePop }) => {
     const order = await dappazon.orders(account, orders[0].args.orderId)
     setOrder(order)
   }
-
   const buyHandler = async () => {
-    const signer = await provider.getSigner()
-
-    // Buy item...
-    let transaction = await dappazon.connect(signer).buy(item.id, { value: item.cost })
-    await transaction.wait()
-
-    setHasBought(true)
+    try {
+      const signer = await provider.getSigner()
+  
+      // Buy item...
+      let transaction = await dappazon.connect(signer).buy(item.id, { value: item.cost })
+      await transaction.wait()
+  
+      setHasBought(true)
+    } catch (error) {
+      console.error('Error buying item:', error);
+      // Handle error (e.g., display an error message to the user)
+    }
   }
-
+  
   useEffect(() => {
     fetchDetails()
   }, [hasBought])
@@ -83,8 +87,8 @@ const Product = ({ item, provider, account, dappazon, togglePop }) => {
             Buy Now
           </button>
 
-          <p><small>Ships from</small> Pharma Sync</p>
-          <p><small>Sold by</small> Pharma Sync</p>
+          <p><small>Ships from</small> BOOKWARM</p>
+          <p><small>Sold by</small> BOOKWARM</p>
 
           {order && (
             <div className='product__bought'>

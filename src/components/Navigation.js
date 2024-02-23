@@ -16,18 +16,14 @@ const Navigation = ({ account, setAccount }) => {
 
                <a className='link__header' href='/'>
                <div className='nav__brand'>
-                    <h1>PharmaSync</h1>
+                    <h1>BOOKWARM</h1>
                     <div>
-                        <img src="https://img.icons8.com/ios/50/000000/ethereum.png" alt="Ethereum" />
+                        <img src="https://i.ibb.co/W0CW3Pt/logo1.png" alt="Ethereum" />
                     </div>
                 </div>
                </a>
 
-            <input
-                type="text"
-                placeholder="Search"
-                className="nav__search"
-            />
+            <h2 className='nav_top'>Find your gener and order your Book</h2>
 
 
             {
@@ -36,7 +32,7 @@ const Navigation = ({ account, setAccount }) => {
                         type='button'
                         className='nav__connect'
                     >
-                        {account.slice(0, 6) + "..." + account.slice(42)}
+                        {"connected to "+ account.slice(0, 6) + "..." + account.slice(42)}
                     </button>
                     :
                     <button
@@ -50,13 +46,22 @@ const Navigation = ({ account, setAccount }) => {
 
             <ul className='nav__links'>
                 <li>
-                    <a href='#Tablets'>Tablets</a>
+                    <a href='#Bestseller'>Fiction</a>
                 </li>
                 <li>
-                    <a href='#Drops'>Drops</a>
+                    <a href='#Marvel'>Marvel</a>
                 </li>
                 <li>
-                    <a href='#Kit'>Kit</a>
+                    <a href='#Mythology'>Mythology</a>
+                </li>
+                <li>
+                    <a href='#History'>History</a>
+                </li>
+                <li>
+                    <a href='#Hindi'>Hindi</a>
+                </li>
+                <li>
+                    <a href='#Goosebumps'>Goosebumps</a>
                 </li>
             </ul>
         </nav>
